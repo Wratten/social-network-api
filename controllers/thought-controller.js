@@ -5,7 +5,7 @@ const thoughtController = {
   getAllThoughts(req, res) {
     Thought.find({})
       .populate({
-        path: "users",
+        path: "_id",
         select: "-__v",
       })
       .select("-__v")
@@ -21,7 +21,7 @@ const thoughtController = {
   getThoughtById({ params }, res) {
     Thought.findOne({ _id: params.id })
       .populate({
-        path: "users",
+        path: "_id",
         select: "-__v",
       })
       .select("-__v")
