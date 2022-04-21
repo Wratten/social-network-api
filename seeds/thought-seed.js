@@ -11,7 +11,7 @@ async function seedThoughts(numbers) {
     const randomUser = await getRandomModel(User);
 
     const created = await Thought.create({
-      thought_text: faker.lorem.sentence(10),
+      thoughtText: faker.lorem.sentence(10),
       // I need to randomly get a user id here
 
       reactions: [
